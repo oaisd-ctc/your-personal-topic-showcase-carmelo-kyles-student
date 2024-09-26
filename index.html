@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/main.css">
+
+</head>
+
+<body>
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 6</div>
+            <a href="pages/natureplaneexplain.html"><img src="images/nature2field.JPG" style="width:100%"
+                    height="500px"></a>
+            <div class="text">A picture of a meadow</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 6</div>
+            <a href="pages/naturetreeexplain.html"><img src="images/nature1.JPG" style="width:100%"
+                    height="500px"></a>
+            <div class="text">A picture of a tree</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 6</div>
+            <a href="pages/lilguyexplain.html"><img src="images/lilguy.JPG" style="width:100%" height="500px"></a>
+            <div class="text">A picture of a toy from toy story</div>
+        </div>
+        <!-- <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a> -->
+
+        <div class="mySlides fade">
+            <div class="numbertext">4 / 6</div>
+            <a href="pages/starsexplain.html"><img src="images/stars.JPG" width="100%" height="500px">
+                <div class="text">a picture of stars </div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">5 / 6</div>
+            <a href="pages/robotexplain.html"><img src="images/robot.JPG" style="width:100%" height="500px"
+                    class="center"></a>
+            <div class="text">A picture of team 141's robot</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">6 / 6</div>
+            <a href="pages/teachingexplain.html"><img src="images/teaching2.JPG" style="width:100%"
+                    height="500px"></a></a>
+            <div class="text">A picture of students in a classroom learing about java programming</div>
+        </div>
+    </div>
+
+
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+        <span class="dot" onclick="currentSlide(6)"></span>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+
+</body>
+
+</html>
